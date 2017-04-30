@@ -1,0 +1,3 @@
+
+class UseCaseFactory
+end

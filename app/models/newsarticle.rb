@@ -1,7 +1,7 @@
 class NewsArticle
   include Mongoid::Document
 
-  field :id, type: BSON::ObjectId
+  field :_id, type: BSON::ObjectId
   field :url, type: String
   field :title, type: String
   field :body, type: String
