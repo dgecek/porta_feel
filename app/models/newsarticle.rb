@@ -1,5 +1,7 @@
-class NewsArticle
+class Newsarticle
   include Mongoid::Document
+
+  store_in collection: 'newsarticles'
 
   field :_id, type: BSON::ObjectId
   field :url, type: String

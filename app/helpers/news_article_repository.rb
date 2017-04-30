@@ -4,7 +4,7 @@ class NewsArticleRepository
     @date_provider = date_provider
   end
 
-  def get(article_id)
-    NewsArticle.where(:id => article_id)
+  def get_article(article_id)
+    Newsarticle.where(:_id => article_id).first
   end
 end
