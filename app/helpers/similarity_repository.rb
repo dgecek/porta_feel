@@ -5,6 +5,6 @@ class SimilarityRepository
   end
 
   def get_recent_similarities
-    Similarity.where(:date.gte => @date_provider.get_date_number_of_days_ago)
+    Similarity.where(:date.gte => @date_provider.get_date_number_of_days_ago).order_by(:date.desc)
   end
 end

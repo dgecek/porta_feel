@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Business Casual - Start Bootstrap Theme</title>
+  <title>PortaFEEL</title>
 
   <style>
     body {
@@ -38,8 +38,8 @@
 
 <body>
 
-<div class="brand">Business Casual</div>
-<div class="address-bar">3481 Melrose Place | Beverly Hills, CA 90210 | 123.456.7890</div>
+<div class="brand">PortaFEEL</div>
+<div class="address-bar">feel the news</div>
 
 <!-- Navigation -->
 <nav class="navbar navbar-default" role="navigation">
@@ -132,7 +132,7 @@
   <div class="container">
     <% @grouped_articles.each do |similarity_set| %>
         <div class="box">
-          <div class="row">
+          <div class="row" style="align-content: center">
 
             <% similarity_set.each do |news_article| %>
                 <%
@@ -145,14 +145,15 @@
                       color = '#30303030'
                   end
                 %>
-                <div class="col-lg-3">
-                  <div class="card" style="background-color:<%= color %>">
-                    <img class="card-img-top" style="width: 250px" src="<%= news_article.urlToImage %>" alt="<%= news_article.portal %>">
+                <div class="col-lg-3" style="margin: 3px 3px 3px 3px; background-color:<%= color %>; height: 600px; width: 24%">
+                  <div class="card">
+                    <img style="width: 250px; max-height: 160px; align-content: center" src="<%= news_article.urlToImage %>" alt="<%= news_article.portal %>">
                     <div class="card-block">
                       <p class="card-text"><%= news_article.portal %></p>
                       <h4 class="card-title"><%= news_article.title %></h4>
                       <p class="card-text"><%= news_article.body.split(/\s+/, 10+1)[0...10].join(' ') + '...' %></p>
-                      <a href="<%= news_article.url %>" class="btn btn-primary">Go somewhere</a>
+                      <p class="card-text"><%= news_article.date %></p>
+                      <a href="<%= news_article.url %>" class="btn btn-primary">Link</a>
                     </div>
                   </div>
                 </div>

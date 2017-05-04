@@ -1,19 +1,27 @@
 class GetGroupedArticlesUseCase
 
   def initialize(news_article_repo = RepositoryFactory.provide_articles_repository,
-                 similarity_repo = RepositoryFactory.provide_similarity_repository)
+                 similarity_repo = RepositoryFactory.provide_similarity_repository,
+                 date_provider = UtilsFactory.provide_date_provider)
     @news_article_repository = news_article_repo
     @similarity_repository = similarity_repo
+    @date_provider = date_provider
   end
 
   def execute
     array_of_similarity_sets = Array.new
     recent_similarities = @similarity_repository.get_recent_similarities
 
+    recent_date = @date_provider.get_date_number_of_days_ago
+
     recent_similarities.each do |similarity|
       if similarity.similarity > 0.20
         first_article = @news_article_repository.get_article similarity.firstArticleId
         second_article = @news_article_repository.get_article similarity.secondArticleId
+
+        if first_article.date < recent_date || second_article.date < recent_date
+          next
+        end
 
         first_article_set = get_article_set_in_array first_article, array_of_similarity_sets
         unless first_article_set.nil?
