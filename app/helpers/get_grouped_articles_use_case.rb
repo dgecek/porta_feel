@@ -15,7 +15,7 @@ class GetGroupedArticlesUseCase
     recent_date = @date_provider.get_date_number_of_days_ago
 
     recent_similarities.each do |similarity|
-      if similarity.similarity > 0.20
+      if similarity.similarity > 0.196
         first_article = @news_article_repository.get_article similarity.firstArticleId
         second_article = @news_article_repository.get_article similarity.secondArticleId
 

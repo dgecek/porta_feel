@@ -138,17 +138,17 @@
                 <%
                   case news_article.predictedSentiment
                     when 'positive'
-                      color = '#00FF0030'
+                      color = '#00FF00'
                     when 'negative'
-                      color = '#FF000030'
+                      color = '#FF0000'
                     else
-                      color = '#30303030'
+                      color = '#303030'
                   end
                 %>
-                <div class="col-lg-3" style="margin: 3px 3px 3px 3px; background-color:<%= color %>; height: 600px; width: 24%">
-                  <div class="card">
+                <div class="col-lg-3 col-md-5 col-xs-12" style="align-content: center;">
+                  <div class="card" style="height: 600px; align-content: center; border-style: solid; border-width: 3px; border-color:<%= color %>; margin-bottom: 10px">
                     <img style="width: 250px; max-height: 160px; align-content: center" src="<%= news_article.urlToImage %>" alt="<%= news_article.portal %>">
-                    <div class="card-block">
+                    <div class="card-block" style="padding: 5px 5px 5px 5px;" >
                       <p class="card-text"><%= news_article.portal %></p>
                       <h4 class="card-title"><%= news_article.title %></h4>
                       <p class="card-text"><%= news_article.body.split(/\s+/, 10+1)[0...10].join(' ') + '...' %></p>
