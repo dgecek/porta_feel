@@ -39,17 +39,17 @@ class GetGroupedArticlesUseCase
         similarity_set.add first_article
         similarity_set.add second_article
 
-        array_of_similarity_sets.insert(-1, similarity_set)
+        array_of_similarity_sets.insert(-1, SimilaritySet.new(similarity_set, Array.new))
       end
     end
     array_of_similarity_sets
   end
 
-  def get_article_set_in_array(element, array_of_sets)
+  def get_article_set_in_array(element, similarity_sets)
     return_set = nil
-    array_of_sets.each do |set|
-      if set.include? element
-        return_set = set
+    similarity_sets.each do |similarity_set|
+      if similarity_set.set.include? element
+        return_set = similarity_set.set
       end
     end
     return_set

@@ -5,7 +5,6 @@ class WelcomeController < ApplicationController
   end
 
   def index
-    @_request.env['HTTP_REFERER'] = 'http://example.com'
     @grouped_articles = @get_grouped_articles_use_case.execute
   end
 end

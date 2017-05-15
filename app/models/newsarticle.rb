@@ -14,4 +14,5 @@ class Newsarticle
   field :date, type: Date
   field :urlToImage, type: String
   field :tfIdfs, type: Hash
+  field :subjects, type: Array
 end
