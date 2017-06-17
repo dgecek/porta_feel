@@ -1,6 +1,6 @@
 class NewsArticleRepository
 
-  def initialize(date_provider = UtilsFactory.provide_date_provider)
+  def initialize(date_provider)
     @date_provider = date_provider
   end
 

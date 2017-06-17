@@ -1,8 +1,6 @@
 class GetGroupedArticlesUseCase
 
-  def initialize(news_article_repo = RepositoryFactory.provide_articles_repository,
-                 similarity_repo = RepositoryFactory.provide_similarity_repository,
-                 date_provider = UtilsFactory.provide_date_provider)
+  def initialize(news_article_repo, similarity_repo, date_provider)
     @news_article_repository = news_article_repo
     @similarity_repository = similarity_repo
     @date_provider = date_provider
