@@ -1,5 +1,5 @@
 class DateProvider
-  def get_current_date()
+  def get_current_date
     Time.now
   end
 
