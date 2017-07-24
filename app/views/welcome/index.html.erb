@@ -1,11 +1,12 @@
 <% content_for :content do %>
     <div class="container">
-      <% @grouped_articles.each do |similarity_set| %>
+      <% @grouped_articles.each do |article_group| %>
           <div class="box">
             <div class="row" style="align-content: center">
 
-              <% similarity_set.set.each do |news_article| %>
+              <% article_group.articles.each do |news_article_hash| %>
                   <%
+                    news_article = Newsarticle.new news_article_hash
                     case news_article.predictedSentiment
                       when 'positive'
                         color = '#00FF00'
