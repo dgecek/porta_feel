@@ -8,6 +8,12 @@
 /.bundle
 
 # Ignore all logfiles and tempfiles.
+
+/config/secrets.yml
+/shared/log/puma.stderr.log
+/shared/log/puma.stdout.log
+/shared/pids/puma.state
+
 /log/*
 /tmp/*
 !/log/.keep
@@ -28,6 +34,7 @@ pickle-email-*.html
 .idea
 .idea/
 /.idea
+/shared/pids/puma.pid
 
 # TODO Comment out these rules if you are OK with secrets being uploaded to the repo
 config/initializers/secret_token.rb
