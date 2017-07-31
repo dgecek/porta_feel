@@ -2,6 +2,7 @@
     <div class="container">
       <% @grouped_articles.each do |article_group| %>
           <div class="box">
+            <div style="font-size: 16pt; margin-bottom: 12pt"><%= article_group.articles[0]['category'] %></div>
             <div class="row" style="align-content: center">
 
               <% article_group.articles.each do |news_article_hash| %>
